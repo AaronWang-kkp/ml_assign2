@@ -1,6 +1,6 @@
 import numpy as np
 
-a = np.sum(np.ones([5,5]))
+a = np.sum(np.zeros([5,5]))
 print(a)
 
 # task 5
