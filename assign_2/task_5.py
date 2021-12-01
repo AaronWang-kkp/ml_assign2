@@ -118,6 +118,7 @@ for t in range(n_iter):
     Z = normalize(Z, axis=1, norm='l1')
 
     # Do the M-step:
+
     for i in range(k):
         mu[i,:] = np.matmul(X.transpose(), Z[:,i])/np.sum(Z[:,i])
         
@@ -133,7 +134,8 @@ for t in range(n_iter):
         #########################################
         # Write your code here
         # Suggest ways of overcoming the singularity
-
+        over_sin = np.eye(D) * random.uniform(10**-6,15**-6)
+        s[i,:,:] += over_sin
         ########################################/
         p[i] = np.mean(Z[:,i])
     ax1.clear()
