@@ -88,17 +88,11 @@ print('f2 range: {}-{} | {} points'.format(min_f2, max_f2, N_f2))
 # M should contain "0.0" in the points that belong to phoneme 1 and "1.0" in the points that belong to phoneme 2
 ########################################/
 data_Theta_p1_k3 = 'data/GMM_params_phoneme_01_k_03.npy'
-data_Theta_p1_k6 = 'data/GMM_params_phoneme_01_k_06.npy'
 data_Theta_p2_k3 = 'data/GMM_params_phoneme_02_k_03.npy'
-data_Theta_p2_k6 = 'data/GMM_params_phoneme_02_k_06.npy'
 data_Theta1 = np.load(data_Theta_p1_k3, allow_pickle=True)
 data_Theta1 = np.ndarray.tolist(data_Theta1)
 data_Theta2 = np.load(data_Theta_p2_k3, allow_pickle=True)
 data_Theta2 = np.ndarray.tolist(data_Theta2)
-data_Theta3 = np.load(data_Theta_p1_k6, allow_pickle=True)
-data_Theta3 = np.ndarray.tolist(data_Theta3)
-data_Theta4 = np.load(data_Theta_p2_k6, allow_pickle=True)
-data_Theta4 = np.ndarray.tolist(data_Theta4)
 
 mu1 = data_Theta1['mu']
 s1 = data_Theta1['s']
@@ -108,12 +102,7 @@ mu2 = data_Theta2['mu']
 s2 = data_Theta2['s']
 p2 = data_Theta2['p']
 
-
-# Z1 = get_predictions(mu1, s1, p1, X)
-# Z2 = get_predictions(mu2, s2, p2, X)
-
 Custom_grid = np.zeros([N_f2,N_f1])
-
 Custom_grid_row = np.arange(min_f2,max_f2,1)
 Custom_grid_column = np.arange(min_f1,max_f1,1)
 
