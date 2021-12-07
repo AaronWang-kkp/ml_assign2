@@ -124,13 +124,19 @@ A1 = 0
 B1 = 0
 
 for i in range(int(X.shape[0]/2)):
-    # if np.sum(Z1[i])>np.sum(Z2[i]):
-    if np.sum(Z3[i]) > np.sum(Z4[i]):
-        A1 += 1
+    if k ==3:
+        if np.sum(Z1[i]) > np.sum(Z2[i]):
+            A1 += 1
+    if k ==6:
+        if np.sum(Z3[i]) > np.sum(Z4[i]):
+            A1 += 1
 for i in range(int(X.shape[0]/2),int(X.shape[0])):
-    # if np.sum(Z2[i])>np.sum(Z1[i]):
-    if np.sum(Z4[i]) > np.sum(Z3[i]):
-        B1 += 1
+    if k == 3:
+        if np.sum(Z2[i]) > np.sum(Z1[i]):
+            B1 += 1
+    if k == 6:
+        if np.sum(Z4[i]) > np.sum(Z3[i]):
+            B1 += 1
 
 accuracy = ((A1+B1)/X.shape[0])*100
 ########################################/
